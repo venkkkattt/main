@@ -1,0 +1,32 @@
+in the dashboard, click on "new item"
+freestyle project
+add a new build step
+
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+export MAVEN_HOME=/opt/maven
+export GRADLE_HOME=/opt/gradle
+export PATH=$JAVA_HOME/bin:$MAVEN_HOME/bin:$GRADLE_HOME/bin:$PATH
+
+echo "JAVA_HOME is $JAVA_HOME"
+java -version
+
+echo "Maven version:"
+mvn -version
+
+echo "Gradle version:"
+gradle -v
+
+git -version
+
+find some already existing maven project, like 2nd. If there's none, create a new default maven project. and paste the pom.xml from github)
+cd (the location of the above project)
+
+mvn test
+
+Save
+
+Build Now.
+ it should run successfully and tick mark should be visible.
+
+ finished.
+
