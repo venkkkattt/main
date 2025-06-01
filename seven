@@ -1,0 +1,46 @@
+sudo apt upgrade
+sudo apt install ansible -y
+ansible --version
+mkdir ansible_project
+cd ansible_project
+nano host
+  (it opens a tab, there type the following)
+
+[local]
+localhost ansible_connection=local
+
+ press ctrl + o, enter, ctrl + x
+
+type in terminal, 
+
+ansible -i hosts local -m ping
+nano install_nginx.yml
+
+It opens a tab, there type-: 
+
+---
+- name: Install and start NGINX on localhost
+  hosts: local
+  become: yes
+
+  tasks:
+   - name: Install NGINX
+     apt:
+      name: nginx
+      state: present
+      update_cache: yes
+
+   - name: Ensure NGINX is running
+     service:
+      name: nginx
+      state: started
+      enabled: yes
+
+Press ctrl+o then enter again ctrl+x
+
+in terminal, type
+
+ansible-playbook -i hosts install_nginx.yml
+
+curl http://localhost 
+or open localhost in the browser manually.
