@@ -1,0 +1,11 @@
+maven archetype project
+archetype -> maven-archetype-quickstart
+
+modify pom.xml
+
+mvn clean package
+java -jar target/
+
+gradle init --type pom
+gradle clean build
+java -jar build/libs/
