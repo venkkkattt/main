@@ -1,0 +1,16 @@
+modify pom.xml
+save
+
+mvn clean install
+
+
+
+mvn clean package
+to create jar file.
+
+java -jar /target
+to run the jar file.
+
+write selenium test if needed, 
+save 
+mvn test
