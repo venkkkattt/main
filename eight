@@ -1,0 +1,35 @@
+
+ssh-keygen -t rsa -b 4096
+
+hostname -I
+
+whoami
+
+ssh user@ip
+
+sudo systemctl start jenkins
+
+cd /opt/jenkins-projects/
+
+sudo nano deploy.yml
+
+---
+- name: Deploy Java App
+  hosts: localhost
+  connection: local
+  tasks: 
+   - name: Copy JAR to deployment folder
+     copy:  
+      src: /opt/jenkins-projects/mvntogradle/target/mvntogradle-1.0-SNAPSHOT.jar
+      dest: /var/lib/jenkins/deploy/
+
+
+add build step execute shell.
+
+export MAVEN_HOME=/opt/maven
+export PATH=$MAVEN_HOME/bin:$PATH
+
+cd /opt/jenkins-projects/mvntogradle
+mvn clean package
+ls /opt/jenkins-projects/mvntogradle/target/mvntogradle-1.0-SNAPSHOT.jar
+ansible-playbook -i localhost, -c local deploy.yml
