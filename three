@@ -1,0 +1,10 @@
+select java as language, groovy as dsl
+paste the build.gradle
+- gradle run
+
+choose kotlin as language and dsl
+copy build.gradle.kts
+./gradlew clean build
+./gradlew fatJar
+
+java -jar build/libs/<jarfile>
