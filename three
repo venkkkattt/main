@@ -1,6 +1,12 @@
 select java as language, groovy as dsl
 paste the build.gradle
+
 - gradle run
+- gradle jar
+
+go to build , libs . copy the jar file path
+
+- java -jar <paste the jar file path>
 
 choose kotlin as language and dsl
 copy build.gradle.kts
