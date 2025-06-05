@@ -6,6 +6,8 @@ modify pom.xml
 mvn clean package
 java -jar target/
 
+modify build.gradle
+
 gradle init --type pom
 gradle clean build
 java -jar build/libs/
